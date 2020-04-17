@@ -18,11 +18,14 @@ namespace JammerTools.Music
         private MusicManagerInternal MusicManagerInternal;
 
         public Transform TrackPlayersTransform { get => trackPlayersParent; }
-        private void Start()
+
+        protected override bool KeepBetweenScenes => true;
+
+        protected override void Init()
         {
-            var settigns = Resources.Load<MusicManagerSettings>(MusicManagerSettings.ResourcesPath);
-            //trackPlayersParent = new GameObject("Track Players");
-            MusicManagerInternal = new MusicManagerInternal(this, settigns);
+            var settings = Resources.Load<MusicManagerSettings>(MusicManagerSettings.ResourcesPath);
+            Debug.Assert(settings != null);
+            MusicManagerInternal = new MusicManagerInternal(this, settings);
             MusicManagerInternal.Initialize();
         }
 
@@ -34,5 +37,6 @@ namespace JammerTools.Music
         {
             MusicManagerInternal.SetMusic(track);
         }
+
     }
 }

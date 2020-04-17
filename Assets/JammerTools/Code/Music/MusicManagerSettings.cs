@@ -16,7 +16,7 @@ namespace JammerTools.Music
     {
         public const string FullPath = "Assets/JammerTools/Resources/MusicManagerSettings.asset";
         public const string PrefabPath = "Assets/JammerTools/Resources/TrackPlayer.prefab";
-        public const string ResourcesPath = "Resources/MusicManagerSettings.asset";
+        public const string ResourcesPath = "MusicManagerSettings";
 
 
         public float DefaultFadeInTime = .5f;
@@ -25,7 +25,7 @@ namespace JammerTools.Music
         public MusicTrack startStinger;
 
 #if UNITY_EDITOR
-        [MenuItem("JammerTooks/Create Music Settings")]
+        [MenuItem("Jammer Tools/Create Music Settings")]
         public static void CreateMusicSettings()
         {
             var asset = ScriptableObject.CreateInstance<MusicManagerSettings>();
@@ -40,6 +40,7 @@ namespace JammerTools.Music
 
             var serialized = new SerializedObject(tp);
             serialized.FindProperty("audioSource").objectReferenceValue = audio;
+            serialized.ApplyModifiedProperties();
             var prefab = PrefabUtility.SaveAsPrefabAsset(obj, PrefabPath);
             asset.trackPlayerPrefab = prefab.GetComponent<TrackPlayer>();
 

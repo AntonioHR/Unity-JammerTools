@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace JammerTools.Common
 {
-    public abstract class MonoSingleton<T> : MonoBehaviour where T: MonoSingleton<T>
+    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
         private static T instance;
 
@@ -26,6 +26,14 @@ namespace JammerTools.Common
             GameObject obj = new GameObject(string.Format("Mono Singleton - {0}", typeof(T).Name));
 
             instance = obj.AddComponent<T>();
+            instance.Init();
+            if (instance.KeepBetweenScenes)
+                DontDestroyOnLoad(instance);
+        }
+        protected virtual bool KeepBetweenScenes { get => false; }
+
+        protected virtual void Init()
+        {
         }
     }
 }
