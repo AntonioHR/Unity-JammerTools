@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace JammerTools.Common.StateMachines
+namespace JammerTools.StateMachines
 {
     public abstract class StateMachine<TContext, TState> :
     IStateMachine<TContext, TState>

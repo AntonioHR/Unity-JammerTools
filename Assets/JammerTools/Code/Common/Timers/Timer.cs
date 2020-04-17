@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace JammerTools.Common
 {
-    public class Stopwatch
+    public class Timer
     {
         private float _startTime;
 
-        public Stopwatch() { }
+        public Timer() { }
         bool started = false;
 
         public float ElapsedSeconds { get { return started? Time.time - _startTime : 0; } }
@@ -29,9 +29,9 @@ namespace JammerTools.Common
 
 
 
-        public static Stopwatch CreateAndStart()
+        public static Timer CreateAndStart()
         {
-            var result = new Stopwatch();
+            var result = new Timer();
             result.Restart();
             return result;
         }
