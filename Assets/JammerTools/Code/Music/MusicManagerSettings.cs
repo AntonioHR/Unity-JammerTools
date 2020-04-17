@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine;
 #endif
 
 namespace JammerTools.Music
@@ -33,6 +33,7 @@ namespace JammerTools.Music
             AssetDatabase.CreateAsset(asset, FullPath);
 
 
+
             var obj = new GameObject("Track Player");
             var tp = obj.AddComponent<TrackPlayer>();
             var audio = obj.AddComponent<AudioSource>();
@@ -45,6 +46,10 @@ namespace JammerTools.Music
             asset.trackPlayerPrefab = prefab.GetComponent<TrackPlayer>();
 
             DestroyImmediate(obj);
+
+            serialized = new SerializedObject(asset);
+            serialized.FindProperty("trackPlayerPrefab").objectReferenceValue = prefab.GetComponent<TrackPlayer>();
+            serialized.ApplyModifiedProperties();
 
             AssetDatabase.SaveAssets();
             EditorUtility.FocusProjectWindow();
