@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
     public class MusicManagerInternal
     {

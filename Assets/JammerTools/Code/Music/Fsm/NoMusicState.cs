@@ -1,4 +1,4 @@
-﻿namespace PointNSheep.Common.Music
+﻿namespace JammerTools.Music
 {
     public class NoMusicState : State
     {

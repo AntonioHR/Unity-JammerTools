@@ -1,4 +1,4 @@
-﻿namespace PointNSheep.Common.Music
+﻿namespace JammerTools.Music
 {
     /// <summary>
     /// This state expects the player to already be playing the track

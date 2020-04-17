@@ -61,34 +61,34 @@ namespace JammerTools.Commands
         #region MenuItems
 
 
-        [MenuItem("PointNSheep/Commands/Log All Commands")]
+        [MenuItem("JammerTools/Commands/Log All Commands")]
         public static void LogAllCommands()
         {
             Instance.LogAliveCommands();
         }
-        [MenuItem("PointNSheep/Commands/Log All Commands", true)]
+        [MenuItem("JammerTools/Commands/Log All Commands", true)]
         public static bool LogAllCommandsEnabled()
         {
             return Application.isPlaying;
         }
 
-        [MenuItem("PointNSheep/Commands/Log On Finish - Off")]
+        [MenuItem("JammerTools/Commands/Log On Finish - Off")]
         public static void DisableLogOnFinish()
         {
             Instance.logOnFinish = false;
         }
-        [MenuItem("PointNSheep/Commands/Log On Finish - Off", true)]
+        [MenuItem("JammerTools/Commands/Log On Finish - Off", true)]
         public static bool CanDisableLogOnFinish()
         {
             return Application.isPlaying && Instance.logOnFinish;
         }
 
-        [MenuItem("PointNSheep/Commands/Log On Finish - On")]
+        [MenuItem("JammerTools/Commands/Log On Finish - On")]
         public static void EnableLogOnFinish()
         {
             Instance.logOnFinish = true;
         }
-        [MenuItem("PointNSheep/Commands/Log On Finish - On", true)]
+        [MenuItem("JammerTools/Commands/Log On Finish - On", true)]
         public static bool CanEnableLogOnFinish()
         {
             return Application.isPlaying && !Instance.logOnFinish;

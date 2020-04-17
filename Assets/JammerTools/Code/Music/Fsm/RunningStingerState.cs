@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
     public class RunningStingerState : State
     {

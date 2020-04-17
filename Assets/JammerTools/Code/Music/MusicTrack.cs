@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
-    [CreateAssetMenu(menuName ="PointNSheep/Music Track")]
+    [CreateAssetMenu(menuName ="JammerTools/Music Track")]
     public class MusicTrack : ScriptableObject
     {
         [SerializeField]

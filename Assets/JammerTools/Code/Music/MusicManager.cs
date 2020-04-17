@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
     //This is just a facade
     public class MusicManager : MonoSingleton<MusicManager>

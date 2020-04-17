@@ -1,7 +1,7 @@
 ﻿using JammerTools.StateMachines;
 using System;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
     public abstract class State : State<MusicManagerInternal, State>
     {

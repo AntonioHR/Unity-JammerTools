@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace PointNSheep.Common.Music
+namespace JammerTools.Music
 {
     public class TrackPlayer : MonoBehaviour
     {
